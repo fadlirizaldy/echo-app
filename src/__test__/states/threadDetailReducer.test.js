@@ -1,8 +1,8 @@
 /**
  * TEST SCENARIO
- *  - forumDetailReducer function
+ *  - threadDetailReducer function
  *  - should return the initial state when given by unknown action
- *  - should return the threads data when given by RECEIVE_FORUM_DETAIL action
+ *  - should return the threads data when given by RECEIVE_DETAIL_THREAD action
  *  - should return the threads data with the thread voted by the user when given by UP_VOTE action type
  */
 
@@ -21,7 +21,7 @@ describe("Thread detail reducer function", () => {
 
   it("should return the threads when given by RECEIVE_DETAIL_THREAD action", () => {
     const detailThread = [];
-    const dummuyAction = {
+    const dummyAction = {
       type: "RECEIVE_DETAIL_THREAD",
       payload: {
         detailThread: {
@@ -55,8 +55,8 @@ describe("Thread detail reducer function", () => {
       },
     };
 
-    const nextState = threadDetailReducer(detailThread, dummuyAction);
-    expect(nextState).toEqual(dummuyAction.payload.detailThread);
+    const nextState = threadDetailReducer(detailThread, dummyAction);
+    expect(nextState).toEqual(dummyAction.payload.detailThread);
   });
 
   it("should return the threads with the thread liked by the user when given by UP_VOTE_THREAD action", () => {

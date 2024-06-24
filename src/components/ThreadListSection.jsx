@@ -8,7 +8,6 @@ import { postedAt } from "../utils/formatter";
 const ThreadList = (props) => {
   const { threadUserList } = props;
   const navigate = useNavigate();
-  console.log(threadUserList, "thread");
 
   const { loadingBar } = useSelector((states) => states);
 
@@ -22,44 +21,24 @@ const ThreadList = (props) => {
               onClick={() => navigate(`/threads/${data?.id}`)}
             >
               <div className="mt-2 mb-1 flex items-center gap-2">
-                <img
-                  src={data?.user?.avatar}
-                  alt="pp"
-                  className="w-5 h-5 rounded-full"
-                />
-                <h2 className="font-semibold text-slate-700">
-                  {data?.user?.name}
-                </h2>
+                <img src={data?.user?.avatar} alt="pp" className="w-5 h-5 rounded-full" />
+                <h2 className="font-semibold text-slate-700">{data?.user?.name}</h2>
                 <span>•</span>
-                <p className="text-sm text-gray-400">
-                  {postedAt(data?.createdAt)}
-                </p>
+                <p className="text-sm text-gray-400">{postedAt(data?.createdAt)}</p>
               </div>
               <h3 className="font-semibold text-lg">{data?.title}</h3>
-              <p
-                className=""
-                dangerouslySetInnerHTML={{ __html: data?.body }}
-              ></p>
+              <p className="" dangerouslySetInnerHTML={{ __html: data?.body }}></p>
               <div className="flex items-center gap-3 mt-3">
                 <div className="flex items-center gap-1">
-                  <Icon
-                    icon="ph:chat"
-                    className="text-slate-400 transform -scale-x-100"
-                  />
+                  <Icon icon="ph:chat" className="text-slate-400 transform -scale-x-100" />
                   <p className="text-slate-400">{data?.totalComments}</p>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Icon
-                    icon="iconamoon:like-thin"
-                    className="text-slate-400 transform -scale-x-100"
-                  />
+                  <Icon icon="iconamoon:like-thin" className="text-slate-400 transform -scale-x-100" />
                   <p className="text-slate-400">{data?.upVotesBy?.length}</p>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Icon
-                    icon="solar:dislike-line-duotone"
-                    className="text-slate-400 transform -scale-x-100"
-                  />
+                  <Icon icon="solar:dislike-line-duotone" className="text-slate-400 transform -scale-x-100" />
                   <p className="text-slate-400">{data?.downVotesBy?.length}</p>
                 </div>
               </div>
@@ -68,9 +47,7 @@ const ThreadList = (props) => {
               </div>
             </div>
           ))
-        : loadingBar.default < 1 && (
-            <div className="w-full text-center mt-5">Currently no threads</div>
-          )}
+        : loadingBar.default < 1 && <div className="w-full text-center mt-5">Currently no threads</div>}
     </section>
   );
 };

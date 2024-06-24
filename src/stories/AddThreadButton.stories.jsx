@@ -23,7 +23,7 @@ WithRedColor.args = {
 const WithJustOutline = TemplateStory.bind({});
 WithJustOutline.args = {
   label: "Add Thread",
-  className: "bg-white text-black border border-slate-300",
+  className: "bg-white !text-black border border-slate-300",
 };
 
 export { WithBlueColor, WithRedColor, WithJustOutline };

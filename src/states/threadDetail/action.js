@@ -1,11 +1,6 @@
 import { toast } from "react-toastify";
 import { hideLoading, showLoading } from "react-redux-loading-bar";
-import {
-  getDetailThread,
-  postCreateComment,
-  postDownVoteThread,
-  postUpVoteThread,
-} from "../../utils/api";
+import { getDetailThread, postCreateComment, postDownVoteThread, postUpVoteThread } from "../../utils/api";
 
 const ActionType = {
   RECEIVE_DETAIL_THREAD: "RECEIVE_DETAIL_THREAD",
@@ -57,10 +52,10 @@ function asyncReceiveThreadDetail(threadId) {
     try {
       const detailThread = await getDetailThread(threadId);
       dispatch(receiveDetailThreadActionCreator(detailThread.data));
+      dispatch(hideLoading());
     } catch (error) {
       toast.error(error.message);
     }
-    dispatch(hideLoading());
   };
 }
 

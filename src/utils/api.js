@@ -1,5 +1,3 @@
-import { toast } from "react-toastify";
-
 const BASE_URL = "https://forum-api.dicoding.dev/v1";
 
 function getAccessToken() {
@@ -130,16 +128,13 @@ async function getDetailThread(id) {
 
 // ============ COMMENT Of Thread ================
 async function postCreateComment(threadId, content) {
-  const response = await fetchWithToken(
-    `${BASE_URL}/threads/${threadId}/comments`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ content }),
-    }
-  );
+  const response = await fetchWithToken(`${BASE_URL}/threads/${threadId}/comments`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ content }),
+  });
 
   const responseJson = await response.json();
 
@@ -179,12 +174,9 @@ async function postDownVoteThread(id) {
 }
 
 async function postNeutralVoteThread(id) {
-  const response = await fetchWithToken(
-    `${BASE_URL}/threads/${id}/neutral-vote`,
-    {
-      method: "POST",
-    }
-  );
+  const response = await fetchWithToken(`${BASE_URL}/threads/${id}/neutral-vote`, {
+    method: "POST",
+  });
 
   const responseJson = await response.json();
 
@@ -196,12 +188,9 @@ async function postNeutralVoteThread(id) {
 }
 
 async function postUpVoteComment(threadId, commentId) {
-  const response = await fetchWithToken(
-    `${BASE_URL}/threads/${threadId}/comments/${commentId}/up-vote`,
-    {
-      method: "POST",
-    }
-  );
+  const response = await fetchWithToken(`${BASE_URL}/threads/${threadId}/comments/${commentId}/up-vote`, {
+    method: "POST",
+  });
 
   const responseJson = await response.json();
 
@@ -213,12 +202,9 @@ async function postUpVoteComment(threadId, commentId) {
 }
 
 async function postDownVoteComment(threadId, commentId) {
-  const response = await fetchWithToken(
-    `${BASE_URL}/threads/${threadId}/comments/${commentId}/down-vote`,
-    {
-      method: "POST",
-    }
-  );
+  const response = await fetchWithToken(`${BASE_URL}/threads/${threadId}/comments/${commentId}/down-vote`, {
+    method: "POST",
+  });
 
   const responseJson = await response.json();
 
@@ -230,12 +216,9 @@ async function postDownVoteComment(threadId, commentId) {
 }
 
 async function postNeutralVoteComment(threadId, commentId) {
-  const response = await fetchWithToken(
-    `${BASE_URL}/threads/${threadId}/comments/${commentId}/neutral-vote`,
-    {
-      method: "POST",
-    }
-  );
+  const response = await fetchWithToken(`${BASE_URL}/threads/${threadId}/comments/${commentId}/neutral-vote`, {
+    method: "POST",
+  });
 
   const responseJson = await response.json();
 

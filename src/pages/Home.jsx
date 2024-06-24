@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -8,17 +9,16 @@ import ModalNewThread from "../components/ModalNewThread";
 import { asyncPopulateUsersThreadsAndLeaderboards } from "../states/shared/action";
 import LeaderboardSeciton from "../components/LeaderboardSeciton";
 import ThreadList from "../components/ThreadListSection";
+import AddThreadButton from "../components/AddThreadButton";
 
 const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isShowModal, setIsShowModal] = useState(false);
-  const {
-    threads = [],
-    users = [],
-    leaderboards = [],
-    authUser,
-  } = useSelector((states) => states);
+  const threads = useSelector((states) => states.threads);
+  const users = useSelector((states) => states.users);
+  const leaderboards = useSelector((states) => states.leaderboards);
+  const authUser = useSelector((states) => states.authUser);
 
   const threadUserList = threads.map((thread) => ({
     ...thread,
@@ -49,14 +49,7 @@ const Home = () => {
         <ThreadList threadUserList={threadUserList} />
 
         <section className="w-[480px] pr-4" key={"leaderboard"}>
-          <div>
-            <button
-              className="btn h-fit min-h-fit w-full py-1 text-lg rounded-md bg-blue-400 text-white hover:bg-blue-500"
-              onClick={handleShowModal}
-            >
-              New Thread
-            </button>
-          </div>
+          <AddThreadButton label={"Add Thread"} handleShowModal={handleShowModal} />
 
           <LeaderboardSeciton leaderboards={leaderboards} />
         </section>

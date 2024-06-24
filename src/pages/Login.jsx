@@ -14,7 +14,7 @@ import { asyncSetAuthUser } from "../states/authUser/action";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { loadingBar } = useSelector((states) => states);
+  const loadingBar  = useSelector((states) => states.loadingBar);
 
   const {
     register,

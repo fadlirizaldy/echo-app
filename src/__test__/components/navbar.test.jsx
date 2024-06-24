@@ -5,7 +5,7 @@
  */
 
 import { cleanup, render, screen } from "@testing-library/react";
-import { describe, afterEach, it, vi, expect } from "vitest";
+import { describe, afterEach, it, expect } from "vitest";
 import { createStore } from "@reduxjs/toolkit";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";

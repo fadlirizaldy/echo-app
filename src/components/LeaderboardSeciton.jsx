@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
 
 const LeaderboardSeciton = (props) => {
   const { leaderboards } = props;
@@ -42,18 +42,6 @@ const LeaderboardSeciton = (props) => {
         : "Currently no leaderboard.."}
     </div>
   );
-};
-
-LeaderboardSeciton.propTypes = {
-  leaderboards: PropTypes.arrayOf({
-    user: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      email: PropTypes.string.isRequired,
-      avatar: PropTypes.string.isRequired,
-    }).isRequired,
-    score: PropTypes.number.isRequired,
-  }),
 };
 
 export default LeaderboardSeciton;

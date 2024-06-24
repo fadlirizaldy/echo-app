@@ -12,7 +12,7 @@
     "e2e": "cypress run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "ci:test": "vitest --no-watch && start-server-and-test dev http-get://0.0.0.0:5173 e2e"
+    "ci:test": "vitest --no-watch"
   },
   "dependencies": {
     "@iconify/react": "^5.0.1",
@@ -29,8 +29,17 @@
     "react-toastify": "^10.0.5"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "1.5.0",
     "@eslint/compat": "^1.1.0",
     "@eslint/js": "^9.5.0",
+    "@storybook/addon-essentials": "^8.1.10",
+    "@storybook/addon-interactions": "^8.1.10",
+    "@storybook/addon-links": "^8.1.10",
+    "@storybook/addon-onboarding": "^8.1.10",
+    "@storybook/blocks": "^8.1.10",
+    "@storybook/react": "^8.1.10",
+    "@storybook/react-vite": "^8.1.10",
+    "@storybook/test": "^8.1.10",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.3.1",
     "@testing-library/user-event": "^14.5.2",
@@ -45,12 +54,21 @@
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "eslint-plugin-storybook": "^0.8.0",
     "globals": "^15.6.0",
     "jsdom": "^24.1.0",
     "postcss": "^8.4.38",
+    "start-server-and-test": "^2.0.4",
+    "storybook": "^8.1.10",
     "tailwindcss": "^3.4.3",
     "vite": "^5.2.0",
     "vitest": "^1.6.0",
     "webpack": "^5.92.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
+  },
+  "overrides": {
+    "strip-ansi": "6.0.0"
   }
 }

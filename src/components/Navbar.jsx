@@ -6,7 +6,7 @@ import { asyncUnsetAuthUser } from "../states/authUser/action";
 const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { authUser } = useSelector((states) => states);
+  const authUser = useSelector((states) => states.authUser);
 
   const handleLogout = () => {
     dispatch(asyncUnsetAuthUser());

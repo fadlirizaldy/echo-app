@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 const DetailThread = (props) => {
   const { detailThread } = props;
   const dispatch = useDispatch();
-  const { authUser } = useSelector((states) => states);
+  const authUser = useSelector((states) => states.authUser);
 
   const handleUpVoteThread = () => {
     if (!authUser) {

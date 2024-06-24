@@ -10,7 +10,7 @@ import { postedAt } from "../utils/formatter";
 
 const CommentSection = (props) => {
   const { comments, idThread } = props;
-  const { authUser } = useSelector((states) => states);
+  const authUser = useSelector((states) => states.authUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [comment, setComment] = useState("");

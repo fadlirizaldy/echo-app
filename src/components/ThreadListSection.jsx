@@ -9,7 +9,7 @@ const ThreadList = (props) => {
   const { threadUserList } = props;
   const navigate = useNavigate();
 
-  const { loadingBar } = useSelector((states) => states);
+  const  loadingBar  = useSelector((states) => states.loadingBar);
 
   return (
     <section className="flex flex-col gap-4 px-4 w-full" key={"thread"}>

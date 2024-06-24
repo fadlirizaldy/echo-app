@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -14,7 +15,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isShowModal, setIsShowModal] = useState(false);
-  const { threads = [], users = [], leaderboards = [], authUser } = useSelector((states) => states);
+  const { threads = [], users = [], leaderboards = [], authUser } = useSelector((states) => { threads, users, leaderboards, authUser } );
 
   const threadUserList = threads.map((thread) => ({
     ...thread,

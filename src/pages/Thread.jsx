@@ -10,7 +10,7 @@ import CommentSection from "../components/CommentSection";
 const Thread = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { detailThread } = useSelector((states) => states);
+  const detailThread = useSelector((states) => states.detailThread);
 
   useEffect(() => {
     dispatch(asyncReceiveThreadDetail(id));

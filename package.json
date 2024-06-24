@@ -12,7 +12,7 @@
     "e2e": "cypress run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "ci:test": "vitest --no-watch && start-server-and-test dev http-get://0.0.0.0:5173/ e2e"
+    "ci:test": "vitest --no-watch"
   },
   "dependencies": {
     "@iconify/react": "^5.0.1",

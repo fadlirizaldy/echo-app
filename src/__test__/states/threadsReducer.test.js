@@ -24,7 +24,7 @@ describe("List threads reducer function", () => {
     const dummyAction = {
       type: "RECEIVE_THREAD",
       payload: {
-        forums: [
+        threads: [
           {
             id: "thread-aaa",
             title: "Thread Pertama",
@@ -73,7 +73,7 @@ describe("List threads reducer function", () => {
     const dummyAction = {
       type: "ADD_THREAD",
       payload: {
-        forum: {
+        thread: {
           id: "thread-bbb",
           title: "Second Thread",
           body: "This is the second thread",

@@ -4,8 +4,6 @@ import { receiveUsersActionCreator } from "../users/action";
 import { receiveThreadsActionCreator } from "../threads/action";
 import { toast } from "react-toastify";
 import { receiveLeaderboardsActionCreator } from "../leaderboards/action";
-// import { receiveForumsActionCreator } from '../forums/action';
-// import { receiveUsersActionCreator } from '../users/action';
 
 function asyncPopulateUsersThreadsAndLeaderboards() {
   return async (dispatch) => {

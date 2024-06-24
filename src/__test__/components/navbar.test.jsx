@@ -1,3 +1,9 @@
+/**
+ * TEST SCENARIO
+ *  - Navbar should be rendered
+ *  - should render the component and display user info when authenticated
+ */
+
 import { cleanup, render, screen } from "@testing-library/react";
 import { describe, afterEach, it, vi, expect } from "vitest";
 import { createStore } from "@reduxjs/toolkit";
@@ -25,7 +31,6 @@ describe("Navbar Component", () => {
   });
 
   it("Should render Navbar properly", async () => {
-    // render(<Navbar />);
     render(
       <Provider store={store}>
         <BrowserRouter>
@@ -40,7 +45,6 @@ describe("Navbar Component", () => {
   });
 
   it("should render the component and display user info when authenticated", () => {
-    // Set authenticated user in the store
     store.dispatch({
       type: "SET_AUTH_USER",
       payload: { name: "Test User", avatar: "/test-avatar.png" },

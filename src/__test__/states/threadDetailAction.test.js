@@ -1,3 +1,10 @@
+/**
+ * TEST SCENARIO
+ *  - asyncReceiveThreadDetail thunk
+ *  - should dispatch action correctly when data fetching success
+ *  - should dispatch action and call toastify alert correctly when data fetching failed
+ */
+
 import { describe, it, expect, vi } from "vitest";
 import { showLoading, hideLoading } from "react-redux-loading-bar";
 import { toast } from "react-toastify";
@@ -60,5 +67,18 @@ describe("asyncReceiveThreadDetail thunk", () => {
     expect(dispatch).toHaveBeenCalledWith(receiveDetailThreadActionCreator(detailThread));
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
     expect(toast.error).not.toHaveBeenCalled();
+  });
+
+  it("should dispatch actions correctly on error", async () => {
+    const errorMessage = "Failed to fetch detail thread";
+    getDetailThread.mockRejectedValue(new Error(errorMessage));
+
+    const dispatch = vi.fn();
+
+    await asyncReceiveThreadDetail("1")(dispatch);
+
+    expect(dispatch).toHaveBeenCalledWith(showLoading());
+    expect(dispatch).toHaveBeenCalledWith(hideLoading());
+    expect(toast.error).toHaveBeenCalledWith(errorMessage);
   });
 });

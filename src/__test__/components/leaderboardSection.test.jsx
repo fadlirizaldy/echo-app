@@ -1,3 +1,12 @@
+/**
+ * TEST SCENARIO
+ *  - Leaderboard Section should be rendered
+ *  - should render the leaderboard title
+ *  - should display "Currently no leaderboard.." when there are no leaderboard datas
+ *  - should render leaderboard items correctly
+ *  - should apply the correct class based on the user's rank
+ */
+
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import LeaderboardSeciton from "../../components/LeaderboardSeciton";

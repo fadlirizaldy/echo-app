@@ -1,3 +1,11 @@
+/**
+ * TEST SCENARIO
+ *  - forumDetailReducer function
+ *  - should return the initial state when given by unknown action
+ *  - should return the threads data when given by RECEIVE_FORUM_DETAIL action
+ *  - should return the threads data with the thread voted by the user when given by UP_VOTE action type
+ */
+
 import { describe, it, expect } from "vitest";
 import threadDetailReducer from "../../states/threadDetail/reducer";
 

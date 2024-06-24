@@ -52,10 +52,10 @@ function asyncReceiveThreadDetail(threadId) {
     try {
       const detailThread = await getDetailThread(threadId);
       dispatch(receiveDetailThreadActionCreator(detailThread.data));
-      dispatch(hideLoading());
     } catch (error) {
       toast.error(error.message);
     }
+    dispatch(hideLoading());
   };
 }
 

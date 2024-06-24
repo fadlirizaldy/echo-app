@@ -9,7 +9,10 @@
     "test": "vitest --no-watch",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "e2e": "cypress run"
+    "e2e": "cypress run",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "ci:test": "vitest --no-watch && start-server-and-test dev http-get://0.0.0.0:5173 e2e"
   },
   "dependencies": {
     "@iconify/react": "^5.0.1",

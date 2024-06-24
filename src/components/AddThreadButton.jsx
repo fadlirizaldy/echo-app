@@ -16,7 +16,7 @@ const AddThreadButton = (props) => {
 
 AddThreadButton.propTypes = {
   label: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   handleShowModal: PropTypes.func.isRequired,
 };
 

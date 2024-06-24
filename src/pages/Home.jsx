@@ -15,7 +15,10 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isShowModal, setIsShowModal] = useState(false);
-  const { threads = [], users = [], leaderboards = [], authUser } = useSelector((states) => { threads, users, leaderboards, authUser } );
+  const threads = useSelector((states) => states.threads);
+  const users = useSelector((states) => states.users);
+  const leaderboards = useSelector((states) => states.leaderboards);
+  const authUser = useSelector((states) => states.authUser);
 
   const threadUserList = threads.map((thread) => ({
     ...thread,

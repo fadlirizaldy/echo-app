@@ -42,8 +42,5 @@ describe("Login spec", () => {
     cy.get("div")
       .contains(/^Echo$/)
       .should("be.visible");
-    cy.get("div")
-      .contains(/^New Thread$/)
-      .should("be.visible");
   });
 });

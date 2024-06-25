@@ -1,3 +1,13 @@
+# How to Install
+
+> npm install
+
+# Link Deployment
+
+```
+https://echo-app-nine.vercel.app/
+```
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

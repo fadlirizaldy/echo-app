@@ -1,3 +1,11 @@
+/**
+ * TEST SCENARIO
+ *  - Login Page should be rendered
+ *  - should display text danger when email & password is empty
+ *  - should display text danger when email & password is incorrect
+ *  - should display homepage when username and password are correct
+ */
+
 describe("Login spec", () => {
   beforeEach(() => {
     cy.visit("http://localhost:5173/login");

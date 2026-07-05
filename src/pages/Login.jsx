@@ -14,7 +14,7 @@ import { asyncSetAuthUser } from "../states/authUser/action";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const loadingBar  = useSelector((states) => states.loadingBar);
+  const loadingBar = useSelector((states) => states.loadingBar);
 
   const {
     register,
@@ -43,7 +43,9 @@ const Login = () => {
   return (
     <AuthLayout>
       <div className="flex flex-col items-center justify-center py-10">
-        <h2 className="font-semibold text-xl mb-5">Login to your account</h2>
+        <h2 className="font-semibold text-xl mb-5 dark:text-slate-800">
+          Login to your account
+        </h2>
         <form
           onSubmit={handleSubmit(onSubmit)}
           noValidate
@@ -54,12 +56,16 @@ const Login = () => {
             errors={errors.email}
             register={register}
             {...email_validation}
+            className="dark:text-slate-600 dark:placeholder:text-slate-400"
+            labelClassName="dark:text-slate-400"
           />
 
           <InputText
             errors={errors.password}
             register={register}
             {...password_validation}
+            className="dark:text-slate-600 dark:placeholder:text-slate-400"
+            labelClassName="dark:text-slate-400"
           />
           <button
             type="submit"

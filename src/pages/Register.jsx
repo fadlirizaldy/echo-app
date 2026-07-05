@@ -50,7 +50,7 @@ const Register = () => {
   return (
     <AuthLayout>
       <div className="flex flex-col items-center justify-center w-3/4 py-10 mx-auto">
-        <h2 className="font-semibold text-lg">Sign Up</h2>
+        <h2 className="font-semibold text-lg dark:text-slate-800">Sign Up</h2>
         <p className="text-center text-slate-600 font-medium text-xs my-2">
           Sign up and discover a great amount of connection
         </p>
@@ -64,16 +64,22 @@ const Register = () => {
             errors={errors.name}
             register={register}
             {...name_validation}
+            className="dark:text-slate-600 dark:placeholder:text-slate-400"
+            labelClassName="dark:text-slate-400"
           />
           <InputText
             errors={errors.email}
             register={register}
             {...email_validation}
+            className="dark:text-slate-600 dark:placeholder:text-slate-400"
+            labelClassName="dark:text-slate-400"
           />
           <InputText
             errors={errors.password}
             register={register}
             {...password_validation}
+            className="dark:text-slate-600 dark:placeholder:text-slate-400"
+            labelClassName="dark:text-slate-400"
           />
           <button
             type="submit"

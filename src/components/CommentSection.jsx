@@ -31,7 +31,9 @@ const CommentSection = (props) => {
 
   return (
     <div>
-      <h4 className="font-medium text-gray-700">Comments</h4>
+      <h4 className="font-medium text-gray-700 dark:text-slate-200">
+        Comments
+      </h4>
       <div className="flex flex-col">
         <textarea
           rows={4}
@@ -65,7 +67,7 @@ const CommentSection = (props) => {
                       className="w-8 h-8 rounded-full"
                     />
                     <div>
-                      <p className="leading-5 text-sm text-slate-600 font-semibold">
+                      <p className="leading-5 text-sm text-slate-600 font-semibold dark:text-slate-300">
                         {item?.owner?.name}
                       </p>
                       <p className="text-xs text-gray-400">
@@ -115,7 +117,7 @@ CommentSection.propTypes = {
       }).isRequired,
       upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
       downVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
-    }).isRequired
+    }).isRequired,
   ).isRequired,
 };
 

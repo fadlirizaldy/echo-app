@@ -48,7 +48,10 @@ const Home = () => {
         <ThreadList threadUserList={threadUserList} />
 
         <section className="w-[480px] pr-4" key={"leaderboard"}>
-          <AddThreadButton label={"Add Thread"} handleShowModal={handleShowModal} />
+          <AddThreadButton
+            label={"Write Something"}
+            handleShowModal={handleShowModal}
+          />
 
           <LeaderboardSeciton leaderboards={leaderboards} />
         </section>

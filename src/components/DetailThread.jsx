@@ -48,16 +48,20 @@ const DetailThread = (props) => {
           className="w-10 h-10 rounded-full"
         />
         <div>
-          <h2 className="font-semibold text-lg">{detailThread?.title}</h2>
-          <p className="text-slate-500">
+          <h2 className="font-semibold text-lg dark:text-slate-300">
+            {detailThread?.title}
+          </h2>
+          <p className="text-slate-500 dark:text-slate-400">
             {formatDate(detailThread?.createdAt)}
           </p>
-          <div className="badge badge-outline">{detailThread?.category}</div>
+          <div className="badge badge-outline dark:badge-outline">
+            {detailThread?.category}
+          </div>
         </div>
       </div>
 
       <div
-        className="mt-5"
+        className="mt-5 *:text-slate-600 dark:text-slate-300"
         dangerouslySetInnerHTML={{ __html: detailThread?.body }}
       />
 
@@ -138,7 +142,7 @@ DetailThread.propTypes = {
         }).isRequired,
         upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
         downVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
-      }).isRequired
+      }).isRequired,
     ).isRequired,
   }).isRequired,
 };

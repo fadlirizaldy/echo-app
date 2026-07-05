@@ -21,18 +21,18 @@ const Navbar = () => {
         onClick={() => navigate("/")}
       >
         <img src="/echo-logo.png" alt="" className="w-6 h-6" />
-        <a className="text-xl">Echo</a>
+        <a className="text-xl dark:text-white">Echo</a>
       </div>
       {authUser === null ? (
         <div className="flex items-center gap-1">
           <div
-            className="px-3 py-1 rounded-md cursor-pointer border border-slate-200 hover:bg-slate-100"
+            className="px-3 py-1 rounded-md cursor-pointer border border-slate-200 hover:bg-slate-100 dark:border-white dark:hover:bg-slate-700 dark:text-white"
             onClick={() => navigate("/login")}
           >
             Login
           </div>
           <div
-            className="px-3 py-1 rounded-md cursor-pointer border border-slate-200 bg-blue-400 text-white hover:bg-blue-500"
+            className="px-3 py-1 rounded-md cursor-pointer border border-slate-200 bg-blue-400 text-white hover:bg-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600"
             onClick={() => navigate("/sign-up")}
           >
             Sign up

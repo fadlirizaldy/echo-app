@@ -12,11 +12,15 @@ const InputText = (props) => {
     validation,
     errors,
     isTextArea,
+    labelClassName,
   } = props;
 
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor={label} className="font-medium text-sm text-neutral-500">
+      <label
+        htmlFor={label}
+        className={`font-medium text-sm text-neutral-500 dark:text-slate-300 ${labelClassName}`}
+      >
         {label}
       </label>
       {isTextArea ? (
@@ -30,7 +34,7 @@ const InputText = (props) => {
             errors && errors.type !== "apiResponse"
               ? "border-red-500"
               : "border-slate-200 focus:ring-blue-200"
-          } rounded-lg bg-stone-50 focus:ring focus:outline-none ${className}`}
+          } rounded-lg bg-stone-50 focus:ring focus:outline-none dark:bg-transparent dark:text-slate-200 ${className}`}
           {...register(name, validation)}
         />
       ) : (
@@ -39,7 +43,7 @@ const InputText = (props) => {
           name={name}
           type={type}
           placeholder={placeholder}
-          className={`px-2 py-1 border ${
+          className={`px-2 py-1 border dark:text-slate-200 dark:placeholder:text-slate-400 dark:bg-transparent ${
             errors && errors.type !== "apiResponse"
               ? "border-red-500"
               : "border-slate-200 focus:ring-blue-200"

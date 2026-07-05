@@ -4,7 +4,9 @@ const LeaderboardSeciton = (props) => {
   const { leaderboards } = props;
   return (
     <div className="mt-3">
-      <h3 className="font-medium text-lg underline mb-2">Leaderboard</h3>
+      <h3 className="font-medium text-lg underline mb-2 dark:text-white">
+        Leaderboard
+      </h3>
       {leaderboards?.length > 0
         ? leaderboards?.map((item, idx) => (
             <div className="mb-2 flex justify-between" key={idx}>
@@ -15,10 +17,10 @@ const LeaderboardSeciton = (props) => {
                   className="w-10 h-10 rounded-full"
                 />
                 <div>
-                  <h5 className="font-medium text-base leading-5">
+                  <h5 className="font-medium text-base leading-5 dark:text-white">
                     {item?.user.name}
                   </h5>
-                  <p className="leading-5 text-sm text-slate-400">
+                  <p className="leading-5 text-sm text-slate-400 dark:text-slate-300">
                     {item?.user.email}
                   </p>
                 </div>
@@ -30,8 +32,8 @@ const LeaderboardSeciton = (props) => {
                     idx < 1
                       ? "text-white font-medium badge-accent"
                       : idx < 3
-                      ? "text-white font-medium badge-primary"
-                      : "badge-outline"
+                        ? "text-white font-medium badge-primary"
+                        : "badge-outline"
                   }`}
                 >
                   {item?.score}
